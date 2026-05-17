@@ -24,7 +24,7 @@ that don't, and record deviations as ADRs in your own `docs/adr/`.
 | Auth | `has_secure_password` (bcrypt) or Devise | bcrypt for simple session auth; Devise if you need full user management |
 || Authorization | Pundit | Policy objects in `app/policies/`; `authorize` in every controller action |
 || Storage | Active Storage + configurable provider | `local` dev, `minio` on-prem, `amazon` hosted — driven by `STORAGE_PROVIDER` env var |
-|| Testing | RSpec + FactoryBot + SimpleCov | `bundle exec rspec` from repo root |
+|| Testing | RSpec + FactoryBot + SimpleCov + Capybara + Cuprite | `bundle exec rspec` from repo root |
 | Linting | rubocop-rails-omakase | `bundle exec rubocop` |
 | Security scan | Brakeman | `bundle exec brakeman -q` in CI |
 
@@ -320,3 +320,4 @@ Before shipping a new app to production, verify:
 - [ ] All controllers scope queries through the org from the start
 - [ ] `STORAGE_PROVIDER` env var wired in `config/environments/production.rb`; `storage.yml` has `local`, `minio`, and `amazon` stanzas
 - [ ] Pundit `authorize` and `policy_scope` calls verified in every controller (`verify_authorized` / `verify_policy_scoped` after_actions)
+- [ ] Browser/system specs use Capybara with Cuprite as the JavaScript driver

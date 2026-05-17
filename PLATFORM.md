@@ -429,6 +429,21 @@ config.host_authorization = { exclude: ->(request) { request.path == "/up" } }
 ```ruby
 gem "rspec-rails", "~> 8.0"
 gem "factory_bot_rails"
+gem "capybara"
+gem "cuprite"
+```
+
+### Browser / system testing
+
+**Capybara + Cuprite** is the default browser testing stack for system specs.
+
+```ruby
+# spec/support/capybara.rb
+Capybara.register_driver :cuprite do |app|
+  Capybara::Cuprite::Driver.new(app, window_size: [1400, 1400])
+end
+
+Capybara.javascript_driver = :cuprite
 ```
 
 ### Conventions
@@ -588,3 +603,4 @@ Individual decision records for this platform live in `docs/adr/`:
 | [0009](docs/adr/0009-pundit-authorization.md) | Pundit for authorization |
 | [0010](docs/adr/0010-configurable-storage-provider.md) | Configurable storage provider (local / MinIO / S3) |
 | [0011](docs/adr/0011-organization-scaffold.md) | Organization model from day one for future multi-tenancy |
+| [0012](docs/adr/0012-browser-testing-capybara-cuprite.md) | Browser testing with Capybara + Cuprite |
