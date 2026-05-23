@@ -74,6 +74,24 @@ gem "stimulus-rails"
 
 Only if a native mobile app or third-party integration makes a public API surface worthwhile. That will be an explicit new decision, not a default.
 
+### Day-one landing page (deployability gate)
+
+Every new app should ship with a real, themed landing page before or alongside the first deploy. Do not leave the root route as a scaffold placeholder or generic framework default.
+
+If product direction is under-specified, the agent should ask for the minimum branding/product inputs first:
+
+- Product/app name
+- Primary audience
+- Core value proposition headline
+- Primary CTA (what action the user should take)
+- Visual tone (serious/playful/clinical/etc.), color preferences, and logo availability
+
+Minimum implementation bar:
+
+- Root path (`/`) renders a branded landing page aligned to the app theme
+- Page includes a clear headline, value proposition, and CTA
+- Page is mobile-friendly and production-safe (no lorem ipsum/demo copy)
+
 ---
 
 ## Background Jobs
@@ -604,3 +622,4 @@ Individual decision records for this platform live in `docs/adr/`:
 | [0010](docs/adr/0010-configurable-storage-provider.md) | Configurable storage provider (local / MinIO / S3) |
 | [0011](docs/adr/0011-organization-scaffold.md) | Organization model from day one for future multi-tenancy |
 | [0012](docs/adr/0012-browser-testing-capybara-cuprite.md) | Browser testing with Capybara + Cuprite |
+| [0013](docs/adr/0013-day-one-landing-page.md) | Day-one themed landing page for early deployability |

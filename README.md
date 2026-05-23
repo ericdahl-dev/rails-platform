@@ -30,6 +30,7 @@ Use this on day one of a new app. Fork the decisions that apply, skip the ones t
 | [0010](docs/adr/0010-configurable-storage-provider.md) | Configurable storage provider (local / MinIO / S3) |
 | [0011](docs/adr/0011-organization-scaffold.md) | Organization model from day one for future multi-tenancy |
 | [0012](docs/adr/0012-browser-testing-capybara-cuprite.md) | Browser testing with Capybara + Cuprite |
+| [0013](docs/adr/0013-day-one-landing-page.md) | Day-one themed landing page for early deployability |
 
 ## Stack at a Glance
 
