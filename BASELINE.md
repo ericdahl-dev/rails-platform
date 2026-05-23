@@ -25,6 +25,7 @@ that don't, and record deviations as ADRs in your own `docs/adr/`.
 || Authorization | Pundit | Policy objects in `app/policies/`; `authorize` in every controller action |
 || Storage | Active Storage + configurable provider | `local` dev, `minio` on-prem, `amazon` hosted — driven by `STORAGE_PROVIDER` env var |
 || Testing | RSpec + FactoryBot + SimpleCov + Capybara + Cuprite | `bundle exec rspec` from repo root |
+| Launch surface | Themed landing page on `/` | Ship a branded root page with headline + CTA before first deploy |
 | Linting | rubocop-rails-omakase | `bundle exec rubocop` |
 | Security scan | Brakeman | `bundle exec brakeman -q` in CI |
 
@@ -316,6 +317,7 @@ Before shipping a new app to production, verify:
 - [ ] Worker `queues` in `queue.yml` is a YAML array, not a string
 - [ ] Coolify `docker_compose_domains` includes container port (e.g. `:80` or `:3000`)
 - [ ] Wildcard DNS set up if preview deployments are needed
+- [ ] Root route (`/`) serves a branded, themed landing page (not a Rails default/scaffold placeholder)
 - [ ] `Organization` model present from first migration if multi-tenancy is plausible
 - [ ] All controllers scope queries through the org from the start
 - [ ] `STORAGE_PROVIDER` env var wired in `config/environments/production.rb`; `storage.yml` has `local`, `minio`, and `amazon` stanzas
