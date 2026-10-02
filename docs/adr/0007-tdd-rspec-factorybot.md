@@ -16,7 +16,7 @@ gem "simplecov_json_formatter", require: false
 - Write the test first (red → green → refactor).
 - Specs mirror the `app/` tree under `spec/`.
 - FactoryBot for all test data — no fixtures.
-- Request specs for API and controller behaviour.
+- Request specs for API and controller behavior.
 - Unit specs for service objects and models.
 - SimpleCov for local coverage reporting only. No remote upload (Codecov, etc.) unless explicitly decided.
 
@@ -24,7 +24,7 @@ gem "simplecov_json_formatter", require: false
 
 - Shared examples that obscure intent.
 - `let` chains that are hard to follow — prefer explicit setup in each example when clarity matters.
-- Testing implementation details instead of behaviour.
+- Testing implementation details instead of behavior.
 
 ## Commands
 

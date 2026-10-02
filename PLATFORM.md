@@ -27,7 +27,7 @@ New apps use **Rails 8** as the baseline. Where apps diverged, the Rails 8 appro
 13. [Observability](#observability)
 14. [Configuration & Secrets](#configuration--secrets)
 15. [Environment Variables](#environment-variables)
-16. [Domain Modelling](#domain-modelling)
+16. [Domain Modeling](#domain-modeling)
 
 ---
 
@@ -468,7 +468,7 @@ Capybara.javascript_driver = :cuprite
 
 - Specs under `spec/` mirroring the `app/` tree.
 - FactoryBot for all test data — no fixtures.
-- Request specs for API/controller behaviour.
+- Request specs for API/controller behavior.
 - Keep tests close to the code they cover (co-locate where sensible).
 - **TDD is the default.** Write the test first.
 
@@ -583,7 +583,7 @@ Standard set across apps. All optional values should have safe defaults.
 
 ---
 
-## Domain Modelling
+## Domain Modeling
 
 **Decision: Scaffold `Organization` from day one**
 
